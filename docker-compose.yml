@@ -10,10 +10,12 @@ services:
     working_dir: /workspace
     networks: [devnet]
     volumes:
+      - asdf_data:/home/dev/.asdf
       - ./.claudinho:/home/dev/.claudinho
       - claude_data:/home/dev/.claude
       - ./workspace:/workspace
 volumes:
+  asdf_data:
   claude_data:
     external: true
 networks:
