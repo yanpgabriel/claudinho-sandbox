@@ -1,0 +1,4 @@
+.claudinho/.skills_installed
+.claudinho/init_container.sh
+workspace/*
+!workspace/.gitkeep

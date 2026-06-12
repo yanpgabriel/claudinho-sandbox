@@ -1,0 +1,21 @@
+services:
+  claude:
+    build: 
+      context: ./build_files
+      dockerfile: Dockerfile
+    container_name: claude-dev
+    user: dev
+    stdin_open: true
+    tty: true
+    working_dir: /workspace
+    networks: [devnet]
+    volumes:
+      - ./.claudinho:/home/dev/.claudinho
+      - claude_data:/.claude
+      - ./workspace:/workspace
+volumes:
+  claude_data:
+    external: true
+networks:
+  devnet:
+    driver: bridge
