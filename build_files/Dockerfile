@@ -73,6 +73,8 @@ RUN npm config set prefix ${HOME}/.npm-global \
     && npm install -g @anthropic-ai/claude-code \
     && asdf reshim nodejs
 
+RUN mkdir -p /home/${USERNAME}/.claude && chown ${USER_UID}:${USER_GID} /home/dev/.claude
+
 # ---- Copia o entrypoint custom ----
 COPY --chown=${USER_UID}:${USER_GID} entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN sudo chmod +x /usr/local/bin/entrypoint.sh

@@ -11,7 +11,7 @@ services:
     networks: [devnet]
     volumes:
       - ./.claudinho:/home/dev/.claudinho
-      - claude_data:/.claude
+      - claude_data:/home/dev/.claude
       - ./workspace:/workspace
 volumes:
   claude_data:

@@ -2,6 +2,7 @@
 set -e
 
 echo "Entrypoint injetado."
+whoami
 pwd
 
 CLAUDINHO_PATH="$HOME/.claudinho"
