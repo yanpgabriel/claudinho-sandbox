@@ -1,4 +1,5 @@
 .claudinho/.skills_installed
 .claudinho/init_container.sh
+.claudinho/.claude.json
 workspace/*
 !workspace/.gitkeep

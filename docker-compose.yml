@@ -11,8 +11,8 @@ services:
     networks: [devnet]
     volumes:
       - asdf_data:/home/dev/.asdf
-      - ./.claudinho:/home/dev/.claudinho
       - claude_data:/home/dev/.claude
+      - ./.claudinho:/home/dev/.claudinho
       - ./workspace:/workspace
 volumes:
   asdf_data:

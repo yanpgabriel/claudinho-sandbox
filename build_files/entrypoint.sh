@@ -8,6 +8,15 @@ if [ -d "$CLAUDINHO_PATH" ]; then
 	echo " + Path do claudinho encontrado."
     sudo chown dev:dev -R "$CLAUDINHO_PATH"
 
+    CLAUDE_JSON="$HOME/.claude.json"
+	CLAUDINHO_JSON="$CLAUDINHO_PATH/.claude.json"
+	if [ ! -f "$CLAUDINHO_JSON" ]; then
+	    echo " + Criando .claude.json vazio..."
+	    echo "{}" > "$CLAUDINHO_JSON"
+	fi
+	echo " + Criando link do .claude.json..."
+	ln -sf "$CLAUDINHO_JSON" "$CLAUDE_JSON"
+	
 	SKILLS_MARKER="$CLAUDINHO_PATH/.skills_installed"
 	if [ ! -f "$SKILLS_MARKER" ]; then
 	    echo " + Instalando skills..."
